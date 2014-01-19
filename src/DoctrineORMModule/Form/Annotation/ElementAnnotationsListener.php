@@ -238,6 +238,11 @@ class ElementAnnotationsListener extends AbstractListenerAggregate
 
         $elementSpec = $event->getParam('elementSpec');
 
+        // allow type overriding
+        if (isset($elementSpec['spec']['type'])) {
+            return;
+        }
+
         switch ($metadata->getTypeOfField($event->getParam('name'))) {
             case 'bigint':
             case 'integer':
