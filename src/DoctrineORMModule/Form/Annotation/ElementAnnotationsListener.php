@@ -102,7 +102,7 @@ class ElementAnnotationsListener extends AbstractListenerAggregate
 
         $this->mergeAssociationOptions($elementSpec, $mapping['targetEntity']);
 
-        $elementSpec['spec']['attributes']['multiple'] = true;
+        $elementSpec['spec']['type'] = 'DoctrineORMModule\Form\Element\EntityMultiCheckbox';
     }
 
     /**
